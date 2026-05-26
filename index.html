@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{이름}} — 소개 페이지</title>
+  <meta name="description" content="{{이름}}의 개인 소개 페이지" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">{{이름}}</a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <p class="eyebrow">KDN · {{소속_부서}}</p>
+      <h1>
+        안녕하세요,<br />
+        <span class="accent">{{이름}}</span> 입니다.
+      </h1>
+      <p class="tagline">{{한_줄_소개}}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">연락하기</a>
+        <a class="btn btn-ghost" href="https://github.com/electrhi" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <h2>About</h2>
+      <p>
+        {{자기소개_본문_1문단}}
+      </p>
+      <p>
+        {{자기소개_본문_2문단_선택}}
+      </p>
+    </section>
+
+    <section id="skills" class="section container">
+      <h2>Skills &amp; Interests</h2>
+      <ul class="tag-list">
+        <li>{{스킬_1}}</li>
+        <li>{{스킬_2}}</li>
+        <li>{{스킬_3}}</li>
+        <li>{{스킬_4}}</li>
+        <li>{{스킬_5}}</li>
+        <li>{{스킬_6}}</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="section container">
+      <h2>Projects &amp; Experience</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>{{프로젝트_1_제목}}</h3>
+          <p class="card-meta">{{프로젝트_1_기간}}</p>
+          <p>{{프로젝트_1_설명}}</p>
+        </article>
+        <article class="card">
+          <h3>{{프로젝트_2_제목}}</h3>
+          <p class="card-meta">{{프로젝트_2_기간}}</p>
+          <p>{{프로젝트_2_설명}}</p>
+        </article>
+        <article class="card">
+          <h3>{{프로젝트_3_제목}}</h3>
+          <p class="card-meta">{{프로젝트_3_기간}}</p>
+          <p>{{프로젝트_3_설명}}</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2>Contact</h2>
+      <p>편하게 연락 주세요.</p>
+      <ul class="contact-list">
+        <li>
+          <span class="contact-label">Email</span>
+          <a href="mailto:electrichi_77@kdn.com">electrichi_77@kdn.com</a>
+        </li>
+        <li>
+          <span class="contact-label">GitHub</span>
+          <a href="https://github.com/electrhi" target="_blank" rel="noopener">github.com/electrhi</a>
+        </li>
+        <li>
+          <span class="contact-label">소속</span>
+          <span>KDN (한국전력거래소 데이터망)</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; <span id="year"></span> {{이름}}. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
