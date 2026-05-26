@@ -3,108 +3,374 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{이름}} — 소개 페이지</title>
-  <meta name="description" content="{{이름}}의 개인 소개 페이지" />
+  <title>신하이 · KDN 미터링 엔지니어</title>
+  <meta name="description" content="한전KDN 대전충남본부 미터링사업팀, 신하이 — 스마트 미터링과 전력 데이터로 더 안정적인 에너지 인프라를 만듭니다." />
+  <meta property="og:title" content="신하이 — KDN 미터링 엔지니어" />
+  <meta property="og:description" content="스마트 미터링과 전력 데이터로 더 안정적인 에너지 인프라를 만듭니다." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" id="siteHeader">
     <div class="container nav">
-      <a href="#top" class="brand">{{이름}}</a>
-      <nav>
+      <a href="#top" class="brand">
+        <span class="brand-mark">SH</span>
+        <span class="brand-name">신하이<span class="brand-dot">.</span></span>
+      </a>
+      <nav class="nav-links" aria-label="주 메뉴">
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
+      <a href="#contact" class="btn btn-primary btn-sm nav-cta">연락하기</a>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero container">
-      <p class="eyebrow">KDN · {{소속_부서}}</p>
-      <h1>
-        안녕하세요,<br />
-        <span class="accent">{{이름}}</span> 입니다.
-      </h1>
-      <p class="tagline">{{한_줄_소개}}</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#contact">연락하기</a>
-        <a class="btn btn-ghost" href="https://github.com/electrhi" target="_blank" rel="noopener">GitHub</a>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+        <div class="hero-grid"></div>
+      </div>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <span class="badge" data-reveal>
+            <span class="badge-dot"></span>
+            한전KDN · 대전충남본부 미터링사업팀
+          </span>
+          <h1 data-reveal>
+            데이터로 설계하는<br />
+            <span class="gradient-text">미래 에너지 인프라</span>
+          </h1>
+          <p class="hero-tagline" data-reveal>
+            안녕하세요, <strong>신하이</strong>입니다. 스마트 미터링과 전력 데이터를
+            바탕으로 더 정확하고 안정적인 에너지 운영을 만듭니다.
+          </p>
+          <div class="hero-actions" data-reveal>
+            <a href="#contact" class="btn btn-primary">
+              프로젝트 문의하기
+              <svg viewBox="0 0 24 24" fill="none" width="18" height="18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+            </a>
+            <a href="#experience" class="btn btn-ghost">
+              경력 살펴보기
+            </a>
+          </div>
+          <div class="hero-meta" data-reveal>
+            <span><strong>5+</strong> 년 미터링 도메인 경험</span>
+            <span class="sep">·</span>
+            <span>대전 · 충남 권역 인프라 운영</span>
+          </div>
+        </div>
+
+        <div class="hero-card-wrap" data-reveal>
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="hero-card-title">live · metering.kdn</span>
+            </div>
+            <div class="hero-card-body">
+              <div class="stat-row">
+                <div>
+                  <div class="stat-label">실시간 수집률</div>
+                  <div class="stat-value">99.6<span>%</span></div>
+                </div>
+                <div class="spark spark-up">▲ 0.4%</div>
+              </div>
+              <div class="bar"><i style="width:96%"></i></div>
+              <div class="stat-row">
+                <div>
+                  <div class="stat-label">관리 디바이스</div>
+                  <div class="stat-value">128,540<span> 대</span></div>
+                </div>
+                <div class="spark spark-up">▲ 1,820</div>
+              </div>
+              <div class="bar"><i style="width:78%"></i></div>
+              <div class="stat-row">
+                <div>
+                  <div class="stat-label">평균 지연</div>
+                  <div class="stat-value">12<span> ms</span></div>
+                </div>
+                <div class="spark spark-down">▼ 3 ms</div>
+              </div>
+              <div class="bar"><i style="width:18%"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#stats" class="scroll-cue" aria-label="아래로 스크롤">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section id="stats" class="stats">
+      <div class="container stats-grid">
+        <div class="stat" data-reveal>
+          <div class="stat-num" data-count="5">0</div>
+          <div class="stat-cap">년+ 도메인 경험</div>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="stat-num" data-count="120">0</div>
+          <div class="stat-cap">천+ 미터링 디바이스</div>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="stat-num" data-count="99" data-suffix=".6%">0</div>
+          <div class="stat-cap">실시간 수집 안정성</div>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="stat-num" data-count="24" data-suffix="/7">0</div>
+          <div class="stat-cap">무중단 운영 체계</div>
+        </div>
       </div>
     </section>
 
-    <section id="about" class="section container">
-      <h2>About</h2>
-      <p>
-        {{자기소개_본문_1문단}}
-      </p>
-      <p>
-        {{자기소개_본문_2문단_선택}}
-      </p>
-    </section>
-
-    <section id="skills" class="section container">
-      <h2>Skills &amp; Interests</h2>
-      <ul class="tag-list">
-        <li>{{스킬_1}}</li>
-        <li>{{스킬_2}}</li>
-        <li>{{스킬_3}}</li>
-        <li>{{스킬_4}}</li>
-        <li>{{스킬_5}}</li>
-        <li>{{스킬_6}}</li>
-      </ul>
-    </section>
-
-    <section id="projects" class="section container">
-      <h2>Projects &amp; Experience</h2>
-      <div class="card-grid">
-        <article class="card">
-          <h3>{{프로젝트_1_제목}}</h3>
-          <p class="card-meta">{{프로젝트_1_기간}}</p>
-          <p>{{프로젝트_1_설명}}</p>
-        </article>
-        <article class="card">
-          <h3>{{프로젝트_2_제목}}</h3>
-          <p class="card-meta">{{프로젝트_2_기간}}</p>
-          <p>{{프로젝트_2_설명}}</p>
-        </article>
-        <article class="card">
-          <h3>{{프로젝트_3_제목}}</h3>
-          <p class="card-meta">{{프로젝트_3_기간}}</p>
-          <p>{{프로젝트_3_설명}}</p>
-        </article>
+    <!-- ABOUT -->
+    <section id="about" class="section section-alt">
+      <div class="container two-col">
+        <div class="col-text" data-reveal>
+          <span class="eyebrow">About</span>
+          <h2>전력 데이터의 첫 접점,<br />미터링을 책임집니다.</h2>
+          <p>
+            한전KDN 대전충남본부 미터링사업팀에서 스마트 미터링(AMI) 인프라의
+            구축과 운영을 담당하고 있습니다. 수십만 대 규모의 계량 디바이스에서
+            발생하는 데이터를 안정적으로 수집하고, 그 데이터가 곧바로 가치 있는
+            의사결정으로 이어지도록 시스템을 설계합니다.
+          </p>
+          <p>
+            현장의 통신 환경부터 백엔드 데이터 파이프라인까지 전 구간을 이해하며,
+            "안 끊기는 인프라"와 "신뢰할 수 있는 데이터" 두 가지를 가장 중요한
+            기준으로 일합니다.
+          </p>
+          <ul class="check-list">
+            <li><span class="check">✓</span> AMI 시스템 운영 및 장애 대응</li>
+            <li><span class="check">✓</span> 대규모 디바이스 통신 안정화</li>
+            <li><span class="check">✓</span> 데이터 품질 관리 · 가시화</li>
+          </ul>
+        </div>
+        <aside class="col-card" data-reveal>
+          <div class="profile-card">
+            <div class="avatar">
+              <span>신하이</span>
+            </div>
+            <h3>신하이 / Shin Hi</h3>
+            <p class="role">Smart Metering Engineer</p>
+            <dl class="info">
+              <div><dt>소속</dt><dd>한전KDN 대전충남본부<br />미터링사업팀</dd></div>
+              <div><dt>전문 분야</dt><dd>AMI · 전력 데이터 운영</dd></div>
+              <div><dt>활동 지역</dt><dd>대전 · 충청남도 권역</dd></div>
+            </dl>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section id="contact" class="section container">
-      <h2>Contact</h2>
-      <p>편하게 연락 주세요.</p>
-      <ul class="contact-list">
-        <li>
-          <span class="contact-label">Email</span>
-          <a href="mailto:electrichi_77@kdn.com">electrichi_77@kdn.com</a>
-        </li>
-        <li>
-          <span class="contact-label">GitHub</span>
-          <a href="https://github.com/electrhi" target="_blank" rel="noopener">github.com/electrhi</a>
-        </li>
-        <li>
-          <span class="contact-label">소속</span>
-          <span>KDN (한국전력거래소 데이터망)</span>
-        </li>
-      </ul>
+    <!-- EXPERTISE -->
+    <section id="expertise" class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Expertise</span>
+          <h2>다루는 영역</h2>
+          <p class="lead">현장과 데이터, 두 가지를 모두 이해하는 미터링 엔지니어링.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature" data-reveal>
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 3v18"/></svg>
+            </div>
+            <h3>AMI · 스마트 미터링</h3>
+            <p>원격 검침 시스템의 설계, 도입, 운영. 대규모 디바이스의 무중단 데이터 수집을 보장합니다.</p>
+          </article>
+          <article class="feature" data-reveal>
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2-7 4 14 2-7h8"/></svg>
+            </div>
+            <h3>전력 데이터 분석</h3>
+            <p>수집된 계량 데이터의 품질 검증과 이상 탐지. 운영 의사결정에 직결되는 지표를 가시화합니다.</p>
+          </article>
+          <article class="feature" data-reveal>
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M5 12a7 7 0 0114 0M2 12a10 10 0 0120 0"/></svg>
+            </div>
+            <h3>통신 인프라</h3>
+            <p>PLC · RF · LTE-M 등 다양한 통신 환경에서의 미터 연결성 확보와 망 운영.</p>
+          </article>
+          <article class="feature" data-reveal>
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4-9 4-9-4 9-4z"/><path d="M3 10l9 4 9-4M3 14l9 4 9-4"/></svg>
+            </div>
+            <h3>시스템 운영</h3>
+            <p>모니터링 체계 구축, 장애 대응 프로세스, SLA 기반 운영 거버넌스.</p>
+          </article>
+          <article class="feature" data-reveal>
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+            </div>
+            <h3>현장 협업</h3>
+            <p>지역 사업소 · 설치 협력사 · 데이터센터 사이의 다자간 협업과 일정 조율.</p>
+          </article>
+          <article class="feature" data-reveal>
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            </div>
+            <h3>품질 · 보안</h3>
+            <p>계량 데이터의 무결성, 통신 구간 암호화, 운영 컴플라이언스 준수.</p>
+          </article>
+        </div>
+      </div>
     </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Experience</span>
+          <h2>걸어온 길</h2>
+          <p class="lead">현장에서 검증된 운영 경험과 프로젝트 트랙 레코드.</p>
+        </div>
+        <ol class="timeline">
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">현재 · 대전충남본부</div>
+              <h3>스마트 미터링 인프라 운영</h3>
+              <p>대전 · 충남 지역의 AMI 인프라 운영을 책임지며, 십수만 대 규모의 디바이스 안정성 지표를 관리합니다.</p>
+              <div class="chips">
+                <span>AMI</span><span>운영</span><span>모니터링</span>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">프로젝트</div>
+              <h3>계량 데이터 통합 가시화</h3>
+              <p>분산된 미터링 데이터를 단일 대시보드로 통합해 장애 인지 시간을 단축하고 운영 효율을 끌어올렸습니다.</p>
+              <div class="chips">
+                <span>대시보드</span><span>데이터 통합</span><span>운영 효율</span>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">프로젝트</div>
+              <h3>통신 안정성 개선</h3>
+              <p>음영지역과 통신 단절 구간을 식별하고, 보조 통신 수단 도입과 라우팅 정책 개선으로 수집 성공률을 향상.</p>
+              <div class="chips">
+                <span>PLC</span><span>RF</span><span>LTE-M</span>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">지속 활동</div>
+              <h3>운영 프로세스 표준화</h3>
+              <p>장애 등급별 대응 체계와 보고 표준을 정립해 팀 전체의 대응 속도와 일관성을 높였습니다.</p>
+              <div class="chips">
+                <span>SOP</span><span>SLA</span><span>거버넌스</span>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container contact-grid">
+        <div class="contact-text" data-reveal>
+          <span class="eyebrow">Contact</span>
+          <h2>함께 일하실<br />이야기가 있으신가요?</h2>
+          <p>미터링 · 전력 데이터와 관련된 협업, 자문, 기술 교류 모두 환영합니다. 편하게 연락 주세요.</p>
+          <div class="contact-methods">
+            <a class="contact-method" href="tel:01044703882">
+              <div class="contact-method-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-method-label">Mobile</div>
+                <div class="contact-method-value">010-4470-3882</div>
+              </div>
+            </a>
+            <a class="contact-method" href="mailto:electrichi_77@kdn.com">
+              <div class="contact-method-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+              </div>
+              <div>
+                <div class="contact-method-label">Email</div>
+                <div class="contact-method-value">electrichi_77@kdn.com</div>
+              </div>
+            </a>
+            <a class="contact-method" href="https://github.com/electrhi" target="_blank" rel="noopener">
+              <div class="contact-method-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.99 5.24.99 11.51c0 4.86 3.15 8.98 7.52 10.44.55.1.75-.24.75-.53v-1.88c-3.06.66-3.71-1.31-3.71-1.31-.5-1.27-1.22-1.61-1.22-1.61-1-.68.08-.67.08-.67 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.57 1.2 3.2.92.1-.71.38-1.2.69-1.48-2.44-.28-5.01-1.22-5.01-5.42 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.39.11-2.9 0 0 .93-.3 3.04 1.13a10.62 10.62 0 0 1 5.54 0c2.11-1.43 3.03-1.13 3.03-1.13.6 1.51.22 2.62.11 2.9.71.77 1.13 1.75 1.13 2.95 0 4.22-2.57 5.13-5.02 5.41.39.34.74 1 .74 2.03v3c0 .29.2.64.76.53A11.02 11.02 0 0 0 23 11.51C23 5.24 18.27.5 12 .5Z"/></svg>
+              </div>
+              <div>
+                <div class="contact-method-label">GitHub</div>
+                <div class="contact-method-value">github.com/electrhi</div>
+              </div>
+            </a>
+            <div class="contact-method static">
+              <div class="contact-method-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-method-label">Office</div>
+                <div class="contact-method-value">한전KDN 대전충남본부<br /><span class="muted">미터링사업팀</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside class="contact-cta" data-reveal>
+          <div class="cta-card">
+            <h3>빠르게 의논하시려면</h3>
+            <p>업무 시간 (평일 09:00 – 18:00) 내 전화 연락이 가장 빠릅니다. 그 외 시간엔 이메일을 남겨주세요.</p>
+            <a class="btn btn-primary btn-block" href="tel:01044703882">지금 전화하기 →</a>
+            <a class="btn btn-ghost btn-block" href="mailto:electrichi_77@kdn.com">메일로 문의</a>
+            <div class="cta-foot">평균 응답 1 영업일 이내</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <small>&copy; <span id="year"></span> {{이름}}. All rights reserved.</small>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand brand-foot">
+          <span class="brand-mark">SH</span>
+          <span class="brand-name">신하이<span class="brand-dot">.</span></span>
+        </div>
+        <p class="muted">스마트 미터링 · 전력 데이터.<br />한전KDN 대전충남본부 미터링사업팀.</p>
+      </div>
+      <div>
+        <h4>Sitemap</h4>
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:01044703882">010-4470-3882</a>
+        <a href="mailto:electrichi_77@kdn.com">electrichi_77@kdn.com</a>
+        <a href="https://github.com/electrhi" target="_blank" rel="noopener">github.com/electrhi</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <small>&copy; <span id="year"></span> 신하이. All rights reserved.</small>
+      <small class="muted">Designed &amp; built with care.</small>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
